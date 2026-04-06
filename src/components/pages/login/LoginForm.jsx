@@ -1,8 +1,9 @@
 import { useState } from "react";
 
-function LoginPage() {
+function LoginForm() {
   //state
   const [inputValue, setInputValue] = useState("");
+
   //comportement
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,21 +17,19 @@ function LoginPage() {
 
   //render
   return (
-    <div>
+    <form action="submit" onSubmit={handleSubmit}>
       <h1>Bienvenue chez nous !</h1>
       <br />
       <h2>Connectez-vous</h2>
-      <form action="submit" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Entrez votre prénom"
-          onChange={handleChange}
-          required
-        />
-        <button>Accéder à votre espace</button>
-      </form>
-    </div>
+      <input
+        type="text"
+        placeholder="Entrez votre prénom"
+        onChange={handleChange}
+        required
+      />
+      <button>Accéder à votre espace</button>
+    </form>
   );
 }
 
-export default LoginPage;
+export default LoginForm;
