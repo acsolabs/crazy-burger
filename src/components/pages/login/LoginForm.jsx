@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import OrderPage from "../order/OrderPage";
 
 function LoginForm() {
   //state
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
 
   //comportement
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Bonjour ${inputValue}`);
+    navigate("/order"); // alert(`Bonjour ${inputValue}`);
     setInputValue("");
   };
 
@@ -17,7 +20,7 @@ function LoginForm() {
 
   //render
   return (
-    <form action="submit" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <h1>Bienvenue chez nous !</h1>
       <br />
       <h2>Connectez-vous</h2>
@@ -26,8 +29,11 @@ function LoginForm() {
         placeholder="Entrez votre prénom"
         onChange={handleChange}
         required
+        value={inputValue}
       />
-      <button>Accéder à votre espace</button>
+      <Link to={"/order"}>
+        <button>Accéder à votre espace</button>
+      </Link>
     </form>
   );
 }
