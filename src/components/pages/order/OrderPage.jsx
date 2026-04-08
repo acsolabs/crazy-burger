@@ -1,10 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
-function OrderPage({ name }) {
-  const location = useLocation();
-  console.log(location);
+import { Link, useParams } from "react-router-dom";
+function OrderPage() {
+  const { username } = useParams();
   return (
     <>
-      <h1>Bonjour {name}</h1>
+      <h1>Bonjour {username}</h1>
       <Link to={"/"}>
         {" "}
         <button>Déconnexion</button>
