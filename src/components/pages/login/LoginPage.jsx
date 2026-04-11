@@ -13,13 +13,26 @@ function LoginPage() {
 
 const LoginPageStyled = styled.div`
   height: 100vh;
-  background-color: #ff000040;
+  position: relative;
+  /* background: url("/images/burger-background.jpg") center/cover; */
+  background-blend-mode: darken;
   border: 2px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/images/burger-background.jpg") center/cover
+      rgba(0, 0, 0, 0.735);
+    background-blend-mode: darken;
+    z-index: -1;
+  }
 `;
 
 export default LoginPage;
