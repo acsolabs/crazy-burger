@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { IoChevronForwardOutline } from "react-icons/io5";
-import Input from "./Input";
+import TextInput from "./TextInput";
+import { PiUserCircleFill } from "react-icons/pi";
 
 function LoginForm() {
   //state
@@ -26,10 +27,11 @@ function LoginForm() {
       <h1>Bienvenue chez nous !</h1>
       <br />
       <h2>Connectez-vous</h2>
-      <Input
+      <TextInput
+        Icon={<PiUserCircleFill className="iconUser" />}
         handleChange={handleChange}
         inputValue={inputValue}
-        placeholder="Entrez votre prénom"
+        placeholder={"Entrez votre prénom"}
       />
       <button>
         Accéder à votre espace

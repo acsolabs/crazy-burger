@@ -1,10 +1,10 @@
 import { PiUserCircleFill } from "react-icons/pi";
 import styled from "styled-components";
 
-const Input = ({ handleChange, inputValue, ...extraProps }) => {
+const TextInput = ({ handleChange, inputValue, Icon, ...extraProps }) => {
   return (
     <InputStyled className="input-container">
-      <PiUserCircleFill className="iconUser" />
+      {Icon && Icon}
       <input
         value={inputValue}
         onChange={handleChange}
@@ -15,7 +15,7 @@ const Input = ({ handleChange, inputValue, ...extraProps }) => {
   );
 };
 
-export default Input;
+export default TextInput;
 
 const InputStyled = styled.div`
   display: flex;
