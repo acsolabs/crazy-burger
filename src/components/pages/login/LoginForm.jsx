@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { PiUserCircleFill } from "react-icons/pi";
 import { IoChevronForwardOutline } from "react-icons/io5";
+import Input from "./Input";
 
 function LoginForm() {
   //state
@@ -26,16 +26,11 @@ function LoginForm() {
       <h1>Bienvenue chez nous !</h1>
       <br />
       <h2>Connectez-vous</h2>
-      <div className="input-container">
-        <PiUserCircleFill className="iconUser" />
-        <input
-          type="text"
-          placeholder="Entrez votre prénom"
-          onChange={handleChange}
-          required
-          value={inputValue}
-        />
-      </div>
+      <Input
+        handleChange={handleChange}
+        inputValue={inputValue}
+        placeholder="Entrez votre prénom"
+      />
       <button>
         Accéder à votre espace
         <IoChevronForwardOutline className="iconChevron" />
@@ -76,31 +71,6 @@ const LoginFormStyled = styled.form`
     text-align: center;
     vertical-align: middle;
     color: white;
-  }
-
-  .input-container {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    gap: 10px;
-    width: 400px;
-    height: 55px;
-    margin: 10px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    background-color: white;
-    .iconUser {
-      color: #ababab;
-      font-size: 1.5rem;
-    }
-    input {
-      border: none;
-      outline: none;
-      width: 136px;
-      height: 17px;
-    }
   }
 
   button {
